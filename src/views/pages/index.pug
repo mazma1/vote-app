@@ -1,0 +1,28 @@
+doctype html
+html
+  head
+    title Voting App
+  body
+    h2 Vote for your best text editor
+    form(action='/vote' method="POST")
+      div
+        label(for="vs-button") Visual Studio
+        input(
+          type="radio"
+          id="vs-button"
+          name="yourVote"
+          value="visualStudio"
+        )
+      div
+        label(for="sub-button") Sublime Text
+        input(
+          type="radio"
+          id="sub-button"
+          name="yourVote"
+          value="sublimeText"
+        )
+      input(type="submit" name="submit" id="submit")
+
+      ul
+        li Visual Studio: #{votes.visualStudio}
+        li Sublime Text: #{votes.sublimeText}
